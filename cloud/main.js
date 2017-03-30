@@ -21,11 +21,12 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
   var Person = Parse.Object.extend("Person");
   var newPerson = new Person();
 
+  console.log("before save");
   newPerson.save({
     email: "email",
     firstName: "firstName",
     lastName: "lastName"
   }).then(function(result) {
-    console.log("a");
+    console.log("after save");
   });
 });
