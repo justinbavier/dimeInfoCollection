@@ -27,5 +27,5 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
     lastName: "lastName"
   }).then(
     console.log("a");
-  )
+  );
 });
