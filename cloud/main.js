@@ -18,7 +18,7 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
   // const firstName = req.params.firstName;
   // const lastName = req.params.lastName;
 
-  var Person = Parse.Object('Person');
+  var Person = Parse.Object.extend('Person');
   var newPerson = new Person();
 
   newPerson.save({
