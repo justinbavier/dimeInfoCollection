@@ -12,27 +12,22 @@ Parse.Cloud.define('hello', function(req, res) {
 });
 
 Parse.Cloud.define('storeEmailName', function(req, res) {
-  const email = req.params.email;
-  const firstName = req.params.firstName;
-  const lastName = req.params.lastName;
+  // const email = req.params.email;
+  // const firstName = req.params.firstName;
+  // const lastName = req.params.lastName;
 
-  if (!email || !firstName || !lastName) {
-    res.error('Boooo');
-  } else {
-    var Person = Parse.Object.extend('Person');
-    var newPerson = new Person();
+  var Person = Parse.Object.extend('Person');
+  var newPerson = new Person();
 
-    newPerson.set('email', email);
-    newPerson.set('firstName', firstName);
-    newPerson.set('lastName', lastName);
+  newPerson.set('email', 'jbavier123@gmail.com');
+  newPerson.set('firstName', 'Justin');
+  newPerson.set('lastName', 'Bavier');
 
-    newPerson.save(null, {
-      success: function(newPerson) {
-        alert('Nice');
-      },
-      error: function(newPerson, error) {
-        alert('Boo');
-      }
-    });
-  }
+  newPerson.save(null, {
+    success: function(newPerson) {
+      alert('Nice' + Person.id);
+    },
+    error: function(newPerson, error) {
+      alert('Boo' + error.message);
+    }
 });
