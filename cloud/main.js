@@ -15,5 +15,15 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
   const email = req.params.email;
   const firstName = req.params.firstName;
   const lastName = req.params.lastName;
-  res.success(email + " " + firstName + " " + lastName);
+
+  if (!email || !firstName || !lastName) {
+    res.error('Boooo');
+  } else {
+    var newPerson = Parse.Object('Person');
+    newPerson.set('email', email);
+    newPerson.set('firstName', firstName);
+    newPerson.set('lastName', lastName);
+    res.success('Nice');
+  }
+  //res.success(email + " " + firstName + " " + lastName);
 });
