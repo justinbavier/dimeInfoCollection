@@ -18,14 +18,19 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
   // const firstName = req.params.firstName;
   // const lastName = req.params.lastName;
 
-  var person = new Parse.Object('Person');
-  person.set("email", "email");
+  var Person = Parse.Object.extend("Person");
+  var newPerson = new Person();
 
-  person.save().then(function(result) {
-    console.log(result);
-    res.success(result);
-
-  }).fail(function(err) {
-    response.error(err);
+  newPerson.save({
+    email: "email",
+    firstName: "firstName",
+    lastName: "lastName"
+  }, {
+    success: function(newPerson) {
+      return result;
+    },
+    error: function(newPerson, error) {
+      return error.message;
+    }
   });
 });
