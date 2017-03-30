@@ -21,10 +21,13 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
   var Person = Parse.Object('Person');
   var newPerson = new Person();
 
-  newPerson.set({
+  newPerson.save({
     email: "email",
     firstName: "firstName",
     lastName: "lastName"
+  }).then(function(gameTurnAgain) {
+
+  }, function(error) {
+
   });
-  
 });
