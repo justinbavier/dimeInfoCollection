@@ -26,8 +26,8 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
     firstName: "firstName",
     lastName: "lastName"
   }).then(function(gameTurnAgain) {
-
+      return res.success('Nice');
   }, function(error) {
-
+      return res.error('Bad');
   });
 });
