@@ -26,10 +26,10 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
   newPerson.set("lastName", "lastName");
 
   newPerson.save(null, {
-    success: function(item) {
+    success: function(newPerson) {
       console.log("Good");
     },
-    error: function(item, error) {
+    error: function(newPerson, error) {
       console.log("Bad" + error.message);
     }
   });
