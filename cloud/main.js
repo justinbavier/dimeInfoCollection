@@ -18,7 +18,8 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
 
   var Person = Parse.Object.extend('Person');
   var newPerson = new Person();
-
+  console.log('This far');
+  
   newPerson.save({
     email: 'jbavier123@gmail.com',
     firstName: 'Justin',
