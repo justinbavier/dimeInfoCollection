@@ -19,11 +19,20 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
   if (!email || !firstName || !lastName) {
     res.error('Boooo');
   } else {
-    var newPerson = Parse.Object('Person');
+    var Person = Parse.Object.extend('Person');
+    var newPerson = new Person();
+
     newPerson.set('email', email);
     newPerson.set('firstName', firstName);
     newPerson.set('lastName', lastName);
-    res.success('Nice');
+
+    newPerson.save(null, {
+      success: function(newPerson) {
+        alert('Nice');
+      },
+      error: function(newPerson, error) {
+        alert('Boo');
+      }
+    });
   }
-  //res.success(email + " " + firstName + " " + lastName);
 });
