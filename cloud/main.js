@@ -26,11 +26,8 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
   newPerson.set("lastName", "lastName");
 
   newPerson.save(null, {
-    success: function(newPerson) {
-      console.log("Good");
-    },
-    error: function(newPerson, error) {
-      console.log("Bad" + error.message);
-    }
+    email: 'email';
+  }).then(function(newPerson){
+    res.success();
   });
 });
