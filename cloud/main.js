@@ -1,6 +1,5 @@
 Parse.serverURL = process.env.SERVER_URL
 
-
 Parse.Cloud.define('hello', function(req, res) {
   res.success('Hi');
 });
@@ -26,4 +25,5 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
   newTest.set("name", "Test");
   newTest.set("why", "because");
   newTest.save();
+
 });
