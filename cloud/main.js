@@ -30,6 +30,4 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
     console.error(error);
     response.error(error);
   })
-});;
-
 });
