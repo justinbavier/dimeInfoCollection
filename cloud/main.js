@@ -18,7 +18,8 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
   // const firstName = req.params.firstName;
   // const lastName = req.params.lastName;
 
-  Parse.initialize("dime");
+  Parse.initialize("User Info Collection Server");
+
   var Test = new Parse.Object.extend("Test");
   var newTest = new Test();
 
