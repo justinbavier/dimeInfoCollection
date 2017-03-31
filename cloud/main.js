@@ -24,6 +24,12 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
 
   newTest.set("name", "Test");
   newTest.set("why", "because");
-  newTest.save();
+  newTest.save().then(function(user){
+    response.success('Save successful');
+  }, function(error){
+    console.error(error);
+    response.error(error);
+  })
+});;
 
 });
