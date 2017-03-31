@@ -27,12 +27,13 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
   gameScore.save(null, {
     success: function(gameScore) {
       // Execute any logic that should take place after the object is saved.
-      alert('New object created with objectId: ' + gameScore.id);
+      console.log("fuck yes slack rock king");
+      res.success("new person compiled zero one one one one zero zero");
     },
     error: function(gameScore, error) {
       // Execute any logic that should take place if the save fails.
       // error is a Parse.Error with an error code and message.
-      alert('Failed to create new object, with error code: ' + error.message);
+      res.error("you suck, because this was not a successful response, loser.")
     }
   });
 });
