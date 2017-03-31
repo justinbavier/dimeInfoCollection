@@ -13,24 +13,25 @@ Parse.Cloud.define('hello', function(req, res) {
 // });
 
 Parse.Cloud.define('storeEmailName', function(req, res) {
-  // const email = req.params.email;
-  // const firstName = req.params.firstName;
-  // const lastName = req.params.lastName;
+  const email = req.params.email;
+  const firstName = req.params.firstName;
+  const lastName = req.params.lastName;
 
 
-  var GameScore = Parse.Object.extend("Person");
-  var gameScore = new GameScore();
+  var Person = Parse.Object.extend("Person");
+  var newPerson = new Person();
 
-  gameScore.set("email", "1337");
-  gameScore.set("firstName", "Sean Plott");
+  newPerson.set("email", email);
+  newPerson.set("firstName", firstName);
+  newPerson.set("lastName", lastName);
 
-  gameScore.save(null, {
-    success: function(gameScore) {
+  newPerson.save(null, {
+    success: function(newPerson) {
       // Execute any logic that should take place after the object is saved.
-      console.log("fuck yes slack rock king");
+      console.log("fuck yes slack rock king, melodey's echo chamber is amazing.");
       res.success("new person compiled zero one one one one zero zero");
     },
-    error: function(gameScore, error) {
+    error: function(newPerson, error) {
       // Execute any logic that should take place if the save fails.
       // error is a Parse.Error with an error code and message.
       res.error("you suck, because this was not a successful response, loser.")
