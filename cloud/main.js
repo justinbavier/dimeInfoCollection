@@ -21,7 +21,7 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
   var GameScore = Parse.Object.extend("Person");
   var gameScore = new GameScore();
 
-  gameScore.set("email", 1337);
+  gameScore.set("email", "1337");
   gameScore.set("firstName", "Sean Plott");
 
   gameScore.save(null, {
