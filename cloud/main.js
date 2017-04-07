@@ -37,6 +37,7 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
   });
 });
 
+// 'ola 'ola
 Parse.Cloud.define('anonInfo', function(req, res) {
 
   const incomeRange = req.params.incomeRange;
@@ -60,8 +61,6 @@ Parse.Cloud.define('anonInfo', function(req, res) {
   newAnonPerson.set("numOfTrans", numOfTrans);
   newAnonPerson.set("employmentStatus", employmentStatus);
   newAnonPerson.set("wouldYouUseDime", wouldYouUseDime);
-
-
 
   newAnonPerson.save(null, {
     success: function(newAnonPerson) {
