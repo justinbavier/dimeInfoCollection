@@ -4,35 +4,57 @@
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
     <title>Dime</title>
   </head>
+
   <body class="dime-gradient">
     <div align="center">
       <img src="assets/WhiteDime.svg" alt="Header Logo" class="responsive-img" width="600">
     </div>
 
-    <div align="center">
-      <h4>
-        <text>
-          Here at Dime, we are passionate
-        </text>
-      </h4>
+    <div class="row">
+      <div align="center" class="col s4"></div>
+      <div align="center" class="col s4">
+        <h4>
+          <text class="white-text">
+            Text goes here, ED BOY
+          </text>
+        </h4>
+      </div>
+      <div align="center" class="col s4"></div>
     </div>
 
     <div class="row">
-
-      <div class="input-field col s4" align="center"></div>
-
-      <div class="input-field col s4" align="center">
-        <form>
+      <form>
+        <div class="input-field col s4" align="center"></div>
         <div class="row">
-          <div class="input-field">
-            <input placeholder="" id="first_name" type="text" class="validate">
-            <label for="first_name">First Name</label>
+          <div class="input-field col s4">
+            <label for="first_name" class="validate">First Name</label>
+            <div class="row"></div>
+            <div class="row"></div>
+            <input placeholder="" id="first_name" type="text">
           </div>
-          <div class="input-field">
-            <input id="last_name" type="text" class="validate">
+          <div class="input-field col s4">
             <label for="last_name">Last Name</label>
+            <div class="row"></div>
+            <div class="row"></div>
+            <input id="last_name" type="text" class="validate">
+          </div>
+          <div class="input-field col s4" align="center"></div>
+          <div class="input-field col s4">
+            <label for="age">Age</label>
+            <div class="row"></div>
+            <div class="row"></div>
+            <input id="age" type="text" class="validate">
           </div>
         </div>
+      </form>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s8"></div>
+        <label for="email">Email</label>
+        <div class="row"></div>
+        <div class="row"></div>
+        <input id="last_name" type="text" class="validate">
       </div>
 
       <div class="input-field col s4" align="center"></div>
