@@ -17,7 +17,6 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
   const firstName = req.params.firstName;
   const lastName = req.params.lastName;
 
-
   var Person = Parse.Object.extend("Person");
   var newPerson = new Person();
 
@@ -28,13 +27,51 @@ Parse.Cloud.define('storeEmailName', function(req, res) {
   newPerson.save(null, {
     success: function(newPerson) {
       // Execute any logic that should take place after the object is saved.
-      console.log("fuck yes slack rock king, melodey's echo chamber is amazing.");
       res.success("new person compiled zero one one one one zero zero");
     },
     error: function(newPerson, error) {
       // Execute any logic that should take place if the save fails.
       // error is a Parse.Error with an error code and message.
-      res.error("you suck, because this was not a successful response, loser.")
+      res.error("getoughttahere, Noah... btw this is the storeEmailName function() lala")
+    }
+  });
+});
+
+Parse.Cloud.define('anonInfo', function(req, res) {
+
+  const incomeRange = req.params.incomeRange;
+  //how much they donate to charity
+  const monthlyDonation = req.params.monthlyDonation;
+  const doesDonate = req.params.lastName.doesDonate;
+  //name three charities
+  const charities = req.params.lastName.charities;
+  const numOfTrans = req.params.lastName.numOfTrans;
+  const employmentStatus = req.params.lastName.employmentStatus;
+
+  const wouldYouUseDime = req.params.lastName.wouldYouUseDime;
+
+  var AnonPerson = Parse.Object.extend("Anonymous");
+  var newAnonPerson = new AnonPerson();
+
+  newAnonPerson.set("incomeRange", incomeRange);
+  newAnonPerson.set("monthlyDonation", monthlyDonation);
+  newAnonPerson.set("doesDonate", doesDonate);
+  newAnonPerson.set("charities", charities);
+  newAnonPerson.set("numOfTrans", numOfTrans);
+  newAnonPerson.set("employmentStatus", employmentStatus);
+  newAnonPerson.set("wouldYouUseDime", wouldYouUseDime);
+
+
+
+  newAnonPerson.save(null, {
+    success: function(newAnonPerson) {
+      // Execute any logic that should take place after the object is saved.
+      res.success("new anon person compiled zero one one one one zero zero");
+    },
+    error: function(newAnonPerson, error) {
+      // Execute any logic that should take place if the save fails.
+      // error is a Parse.Error with an error code and message.
+      res.error("getoughttahere, Noah... do you even like impressionism, btw #thisisthe(anonInfo)FUNCTION")
     }
   });
 });
