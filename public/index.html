@@ -13,15 +13,16 @@
   <body>
 
   <div ng-app="myApp" ng-controller="formCtrl">
-    <form novalidate>
-      First Name:<br>
-      <input type="text" ng-model="user.firstName"><br>
-      Last Name:<br>
-      <input type="text" ng-model="user.lastName">
-      Email:<br>
-      <input type="text" ng-model="user.email"><br>
-      <br><br>
-      <button ng-click="postToStoreEmail()">RESET</button>
+    <div class="row"></div>
+      <form class="col s6" novalidate>
+        First Name:<br>
+        <input type="text" ng-model="user.firstName"><br>
+        Last Name:<br>
+        <input type="text" ng-model="user.lastName">
+        Email:<br>
+        <input type="text" ng-model="user.email"><br>
+        <br><br>
+        <button ng-click="postToStoreEmail()">RESET</button>
     </form>
     <p>form = {{user}}</p>
     <p>master = {{master}}</p>
@@ -51,6 +52,18 @@
   //   firstParam: 'yourValue',
   //   secondParam: 'yourOtherValue',
   // })
+        })
+      };
+
+
+      $scope.postToAnon = function() {
+        fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/storeEmailName?firstName='+$scope.user.firstName+'&lastName='+$scope.user.lastName+'&email='+$scope.user.email, {
+          method: 'POST',
+          headers: {
+            'X-Parse-Application-Id': 'dime',
+            'Content-Type': 'application/json',
+          },
+
         })
       };
   });
