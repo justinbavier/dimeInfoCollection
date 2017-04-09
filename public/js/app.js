@@ -33,7 +33,7 @@ angular.module('myApp', ['ajoslin.promise-tracker'])
         }
       }
       console.log("Fuck");
-      $http.post('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/hello', data, config)
+      $http.post('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/storeEmailName', data, config)
         .success(function (data, status, headers, config) {
           $scope.PostDataResponse = data;
           console.log(data);
