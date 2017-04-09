@@ -32,9 +32,10 @@ angular.module('myApp', ['ajoslin.promise-tracker'])
           'X-Parse-Application-Id' : 'dime'
         }
       }
+
       $http.post('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/hello', data, config)
         .success(function (data, status, headers, config) {
-          $scope.PostDataResponse = data;
+          $scope.PostDataResponse = 'data';
           console.log(data);
         })
         .error(function (data, status, header, config) {
