@@ -39,7 +39,7 @@
         // request.setRequestHeader('X-Parse-Application-Id',"dime");
         // request.post(data);
 
-        fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/storeEmailName?firstName='+$scope.fname+'&lastName=smith&email=shoot@gmail.com', {
+        fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/storeEmailName?firstName='+$scope.user.fname+'&lastName=smith&email=shoot@gmail.com', {
           method: 'POST',
           headers: {
             'X-Parse-Application-Id': 'dime',
