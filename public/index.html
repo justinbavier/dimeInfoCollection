@@ -34,10 +34,22 @@
       };
       $scope.reset();
       $scope.postToStoreEmail = function() {
-        var request = new XMLHttpRequest();
-        request.open('POST', 'https://sleepy-hamlet-74920.herokuapp.com/parse/functions/storeEmailName?firstName=Heyoboba', true);
-        request.setRequestHeader('X-Parse-Application-Id',"dime");
-        request.send(data);
+        // var request = new XMLHttpRequest();
+        // request.open('POST', 'https://sleepy-hamlet-74920.herokuapp.com/parse/functions/storeEmailName?firstName=Heyoboba&lastName=smith&email=shoot@gmail.com', true);
+        // request.setRequestHeader('X-Parse-Application-Id',"dime");
+        // request.post(data);
+
+        fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/storeEmailName?firstName=Heyoboba&lastName=smith&email=shoot@gmail.com', {
+  method: 'POST',
+  headers: {
+    'X-Parse-Application-Id': 'dime',
+    'Content-Type': 'application/json',
+  },
+  // body: JSON.stringify({
+  //   firstParam: 'yourValue',
+  //   secondParam: 'yourOtherValue',
+  // })
+})
       };
   });
 
