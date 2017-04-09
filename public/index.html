@@ -18,6 +18,8 @@
       <input type="text" ng-model="user.firstName"><br>
       Last Name:<br>
       <input type="text" ng-model="user.lastName">
+      Email:<br>
+      <input type="text" ng-model="user.email"><br>
       <br><br>
       <button ng-click="postToStoreEmail()">RESET</button>
     </form>
@@ -28,7 +30,7 @@
   <script>
   var app = angular.module('myApp', []);
   app.controller('formCtrl', function($scope) {
-      $scope.master = {firstName:"John", lastName:"Doe"};
+      $scope.master = {firstName:"John", lastName:"Doe", email:"Sup"};
       $scope.reset = function() {
           $scope.user = angular.copy($scope.master);
       };
@@ -39,7 +41,7 @@
         // request.setRequestHeader('X-Parse-Application-Id',"dime");
         // request.post(data);
 
-        fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/storeEmailName?firstName='+$scope.user.firstName+'&lastName='+$scope.user.lastName+'&email=', {
+        fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/storeEmailName?firstName='+$scope.user.firstName+'&lastName='+$scope.user.lastName+'&email='+$scope.user.email, {
           method: 'POST',
           headers: {
             'X-Parse-Application-Id': 'dime',
