@@ -7,70 +7,41 @@
     <script src="https://code.angularjs.org/2.0.0-beta.0/http.dev.js"></script>
     <script type="text/javascript" src="js/modules/promise-tracker.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   </head>
 
-  <!--<body class="dime-gradient" style="overflow: hidden">
+  <body>
 
-
-    <div class="row">
-      <div align="center" class="col s4"></div>
-      <div align="center" class="col s4">
-        <h4>
-          <text class="white-text">
-            Text goes here, ED BOY
-          </text>
-        </h4>
-      </div>
-        <div align="center" class="col s4"></div>
-    </div>
-
-
-
-    <script src="/js/app.js"></script>
-</body>-->
-<body class="container">
-
-  <div align="center">
-    <img src="assets/dimeBanner.png" alt="Header Logo" class="responsive-img" width="400">
-  </div>
-<div class="row">
-  <div data-ng-controller="help">
-    <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
-    <div class="col s8"></div>
-    <form class="col s10" name="helpForm" novalidate role="form">
-      <div class="row col s12">
-        <div class="form-group input-field col s6">
-          <label for="fname">First Name
-          <span class="label label-danger blue-text" data-ng-show="submitted && helpForm.fname.$error.required">Required!</span>
-          </label>
-          <div class="row"></div>
-          <input type="text" name="fname" data-ng-model="fname" class="form-control" required />
-        </div>
-        <div class="form-group input-field col s6">
-          <label for="lname">Last Name
-          <span class="label label-danger blue-text" data-ng-show="submitted && helpForm.lname.$error.required">Required!</span>
-          </label>
-          <div class="row"></div>
-          <input type="text" name="lname" data-ng-model="lname" class="form-control" required />
-        </div>
-      </div>
-
-      <div class="row col s12">
-        <div class="form-group input-field col s12">
-          <label for="email">Email
-          <span class="label label-danger blue-text" data-ng-show="submitted && helpForm.email.$error.required">Required!</span>
-          </label>
-          <div class="row"></div>
-          <input type="text" name="email" data-ng-model="email" class="form-control" required />
-        </div>
-      </div>
-
-      <button data-ng-disabled="progress.active()" data-ng-click="submit(helpForm)" class="btn btn-default">Submit</button>
+  <div ng-app="myApp" ng-controller="formCtrl">
+    <form novalidate>
+      First Name:<br>
+      <input type="text" ng-model="user.firstName"><br>
+      Last Name:<br>
+      <input type="text" ng-model="user.lastName">
+      <br><br>
+      <button ng-click="postToStoreEmail()">RESET</button>
     </form>
+    <p>form = {{user}}</p>
+    <p>master = {{master}}</p>
   </div>
-</div>
 
+  <script>
+  var app = angular.module('myApp', []);
+  app.controller('formCtrl', function($scope) {
+      $scope.master = {firstName:"John", lastName:"Doe"};
+      $scope.reset = function() {
+          $scope.user = angular.copy($scope.master);
+      };
+      $scope.reset();
+      $scope.postToStoreEmail = function() {
+        var request = new XMLHttpRequest();
+        request.open('POST', 'https://sleepy-hamlet-74920.herokuapp.com/parse/functions/storeEmailName?firstName=Heyoboba', true);
+        request.setRequestHeader('X-Parse-Application-Id',"dime");
+        request.send(data);
+      };
+  });
 
+  </script>
 
-</body>
+  </body>
 </html>
