@@ -77,7 +77,7 @@
             <form novalidate>
               <!-- Age<br>
               <input type="text" ng-model="user.age"> -->
-          
+
               What was your total income, before taxes, during the past year?<br>
               <p>
                <input class="with-gap" name="incomeRange" ng-model="user.incomeRange" value="Less than $25,000" type="radio" id="incomeBracket1" />
@@ -206,7 +206,7 @@
       };
 
       $scope.postToStoreAnon = function() {
-        fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/anonInfo?incomeRange='+$scope.user.incomeRange+'&monthlyDonation='+$scope.user.monthlyDonation+'&doesDonate='+$scope.user.doesDonate+'&charityOne='+$scope.user.charityOne+'&charityTwo='+$scope.user.charityTwo+'&charityThree='+$scope.user.age+'&numOfTrans='+$scope.user.numOfT+'&employmentStatus='+$scope.user.employment+'&wouldYouUseDime='$scope.user.useDime, {
+        fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/anonInfo?incomeRange='+$scope.user.incomeRange+'&monthlyDonation='+$scope.user.monthlyDonation+'&doesDonate='+$scope.user.doesDonate+'&charityOne='+$scope.user.charityOne+'&charityTwo='+$scope.user.charityTwo+'&charityThree='+$scope.user.age+'&numOfTrans='+$scope.user.numOfT+'&employmentStatus='+$scope.user.employment+'&wouldYouUseDime='+$scope.user.useDime, {
           method: 'POST',
           headers: {
             'X-Parse-Application-Id': 'dime',
