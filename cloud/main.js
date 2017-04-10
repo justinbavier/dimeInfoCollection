@@ -45,7 +45,10 @@ Parse.Cloud.define('anonInfo', function(req, res) {
   const monthlyDonation = req.params.monthlyDonation;
   const doesDonate = req.params.doesDonate;
   //name three charities
-  const charities = req.params.charities;
+  const charityOne = req.params.charityOne;
+  const charityTwo = req.params.charityTwo;
+  const charityThree = req.params.charityThree;
+
   const numOfTrans = req.params.numOfTrans;
   const employmentStatus = req.params.employmentStatus;
 
@@ -57,7 +60,9 @@ Parse.Cloud.define('anonInfo', function(req, res) {
   newAnonPerson.set("incomeRange", incomeRange);
   newAnonPerson.set("monthlyDonation", monthlyDonation);
   newAnonPerson.set("doesDonate", doesDonate);
-  newAnonPerson.set("charities", charities);
+  newAnonPerson.set("charityOne", charityOne);
+  newAnonPerson.set("charityTwo", charityTwo);
+  newAnonPerson.set("charityThree", charityThree);
   newAnonPerson.set("numOfTrans", numOfTrans);
   newAnonPerson.set("employmentStatus", employmentStatus);
   newAnonPerson.set("wouldYouUseDime", wouldYouUseDime);

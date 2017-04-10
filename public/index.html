@@ -3,6 +3,10 @@
   <head>
     <title>Dime</title>
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
+    <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
     <script type="text/javascript" src="http://code.angularjs.org/1.2.25/angular.min.js"></script>
     <script src="https://code.angularjs.org/2.0.0-beta.0/http.dev.js"></script>
     <script type="text/javascript" src="js/modules/promise-tracker.js"></script>
@@ -45,14 +49,48 @@
         <div class="card">
           <div class="card-content">
             <form novalidate>
-              Income Range:<br>
-              <input type="text" ng-model="user.incomeRange"><br>
-              Monthly Donation:<br>
+              What was your total income, before taxes, during the past year?<br>
+              <p>
+               <input class="with-gap" name="incomeRange" ng-model="user.incomeRange" value="Less than $25,000" type="radio" id="incomeBracket1" />
+               <label for="incomeBracket1">Less than $25,000</label>
+              </p>
+              <p>
+               <input class="with-gap" name="incomeRange" ng-model="user.incomeRange" value="$25,000 to $34,999" type="radio" id="incomeBracket2" />
+               <label for="incomeBracket2">$25,000 to $34,999</label>
+              </p>
+              <p>
+               <input class="with-gap" name="incomeRange" ng-model="user.incomeRange" value="$35,000 to $49,999" type="radio" id="incomeBracket3" />
+               <label for="incomeBracket3">$35,000 to $49,999</label>
+              </p>
+              <p>
+               <input class="with-gap" name="incomeRange" ng-model="user.incomeRange" value="$50,000 to $74,999" type="radio" id="incomeBracket4" />
+               <label for="incomeBracket4">$50,000 to $74,999</label>
+              </p>
+              <p>
+               <input class="with-gap" name="incomeRange" ng-model="user.incomeRange" value="$75,000 to $99,999" type="radio" id="incomeBracket5" />
+               <label for="incomeBracket5">$75,000 to $99,999</label>
+              </p>
+              <p>
+               <input class="with-gap" name="incomeRange" ng-model="user.incomeRange" value="$100,000 or more" type="radio" id="incomeBracket6" />
+               <label for="incomeBracket6">$100,000 or more</label>
+              </p>
+              <br />
+              How much do you think you could afford to donate each month?<br>
               <input type="text" ng-model="user.monthlyDonation">
-              Does Donate:<br>
-              <input type="text" ng-model="user.doesDonate"><br>
-              Charities:<br>
-              <input type="text" ng-model="user.charities"><br>
+              Do you currently make regular donations to any charitable organizations?<br>
+              <p>
+               <input class="with-gap" name="doesDonate" ng-model="user.doesDonate" value="Yes" type="radio" id="yesDonate" />
+               <label for="yesDonate">Yes</label>
+              </p>
+              <p>
+               <input class="with-gap" name="doesDonate" ng-model="user.doesDonate" value="No" type="radio" id="noDonate" />
+               <label for="noDonate">No</label>
+              </p>
+              <br />
+              Name a few of your favorite charities:<br>
+              <input type="text" ng-model="user.charityOne"><br>
+              <input type="text" ng-model="user.charityTwo"><br>
+              <input type="text" ng-model="user.charityThree"><br>
               Number of Transactions:<br>
               <input type="text" ng-model="user.numOfTrans"><br>
               Employment Status:<br>
@@ -98,7 +136,7 @@
       };
 
       $scope.postToStoreAnon = function() {
-        fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/anonInfo?incomeRange='+$scope.user.incomeRange+'&monthlyDonation='+$scope.user.monthlyDonation+'&doesDonate='+$scope.user.doesDonate+'&charities='+$scope.user.charities+'&numOfTrans='+$scope.user.numOfTrans+'&employmentStatus='+$scope.user.employmentStatus+'&wouldYouUseDime='+$scope.user.wouldYouUseDime, {
+        fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/anonInfo?incomeRange='+$scope.user.incomeRange+'&monthlyDonation='+$scope.user.monthlyDonation+'&doesDonate='+$scope.user.doesDonate+'&charityOne='+$scope.user.charityOne+'&charityTwo='+$scope.user.charityTwo+'&charityThree='+$scope.user.charityThree+'&numOfTrans='+$scope.user.numOfTrans+'&employmentStatus='+$scope.user.employmentStatus+'&wouldYouUseDime='+$scope.user.wouldYouUseDime, {
           method: 'POST',
           headers: {
             'X-Parse-Application-Id': 'dime',
@@ -106,7 +144,6 @@
           },
         })
       };
-
 
       $scope.postToAnon = function() {
         fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/storeEmailName?firstName='+$scope.user.firstName+'&lastName='+$scope.user.lastName+'&email='+$scope.user.email, {
@@ -120,6 +157,9 @@
       };
   });
 
+      $(document).ready(function() {
+        $('select').material_select();
+      });
   </script>
 
   </body>
