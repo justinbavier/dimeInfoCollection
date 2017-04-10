@@ -31,7 +31,7 @@
           <div class="card-content">
             <span class="card-title">Mission Statement</span>
             <p>
-              Our goal is to seamlessley incorporate charitable donations into people's daily lives. In doing so we hope to set the new standard for how charitable donations are collected. We believe making substantial charitable donations is an achievable goal through nominal daily contributions that add up over time.
+              Our goal is to seamlessly incorporate charitable donations into people's daily lives. In doing so we hope to set the new standard for how charitable donations are collected. We believe making substantial charitable donations is an achievable goal through nominal daily contributions that add up over time.
             </p>
           </div>
         </div>
@@ -189,10 +189,6 @@
       };
       $scope.reset();
       $scope.postToStoreEmail = function() {
-        // var request = new XMLHttpRequest();
-        // request.open('POST', 'https://sleepy-hamlet-74920.herokuapp.com/parse/functions/storeEmailName?firstName=Heyoboba&lastName=smith&email=shoot@gmail.com', true);
-        // request.setRequestHeader('X-Parse-Application-Id',"dime");
-        // request.post(data);
 
         fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/storeEmailName?firstName='+$scope.user.firstName+'&lastName='+$scope.user.lastName+'&email='+$scope.user.email, {
           method: 'POST',
