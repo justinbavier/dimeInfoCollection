@@ -93,11 +93,12 @@
             'X-Parse-Application-Id': 'dime',
             'Content-Type': 'application/json',
           },
+
         })
       };
 
       $scope.postToStoreAnon = function() {
-        fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/storeEmailName?incomeRange='+$scope.user.incomeRange+'&lastName='+$scope.user.lastName+'&email='+$scope.user.email, {
+        fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/anonInfo?incomeRange='+$scope.user.incomeRange+'&monthlyDonation='+$scope.user.monthlyDonation+'&doesDonate='+$scope.user.doesDonate+'&charities='+$scope.user.charities+'&numOfTrans='+$scope.user.numOfTrans+'&employmentStatus='+$scope.user.employmentStatus+'&wouldYouUseDime='+$scope.user.wouldYouUseDime, {
           method: 'POST',
           headers: {
             'X-Parse-Application-Id': 'dime',
