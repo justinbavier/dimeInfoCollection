@@ -183,7 +183,7 @@
             'X-Parse-Application-Id': 'dime',
             'Content-Type': 'application/json',
           },
-        })
+        }).then(location = window.location)
       };
 
       $scope.postToAnon = function() {
@@ -194,7 +194,7 @@
             'Content-Type': 'application/json',
           },
 
-        })
+        }).then(location = window.location)
       };
   });
 
