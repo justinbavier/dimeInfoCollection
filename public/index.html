@@ -12,9 +12,11 @@
 
   <body class="dime-gradient">
   <div ng-app="myApp" ng-controller="formCtrl">
+    <!-- Logo -->
     <div align="center">
       <img src="assets/dimeBanner.png" alt="Header Logo" class="responsive-img" width="600">
     </div>
+    <!--  First Name, Last Name, Email -->
     <div class="row">
       <div class="col s4"></div>
       <div class="col s4">
@@ -36,21 +38,30 @@
       </div>
       <div class="col s4"></div>
     </div>
+    <!-- All the other stuff -->
     <div class="row">
       <div class="col s4"></div>
       <div class="col s4">
         <div class="card">
           <div class="card-content">
             <form novalidate>
-              First Name:<br>
-              <input type="text" ng-model="user.firstName"><br>
-              Last Name:<br>
-              <input type="text" ng-model="user.lastName">
-              Email:<br>
-              <input type="text" ng-model="user.email"><br>
+              Income Range:<br>
+              <input type="text" ng-model="user.incomeRange"><br>
+              Monthly Donation:<br>
+              <input type="text" ng-model="user.monthlyDonation">
+              Does Donate:<br>
+              <input type="text" ng-model="user.doesDonate"><br>
+              Charities:<br>
+              <input type="text" ng-model="user.charities"><br>
+              Number of Transactions:<br>
+              <input type="text" ng-model="user.numOfTrans"><br>
+              Employment Status:<br>
+              <input type="text" ng-model="user.employmentStatus"><br>
+              Would You Use Dime:<br>
+              <input type="text" ng-model="user.wouldYouUseDime"><br>
               <br>
               <div class="col s4"></div>
-              <button class="green accent-3 btn col s4" ng-click="postToStoreEmail()">Submit</button>
+              <button class="green accent-3 btn col s4" ng-click="postToStoreAnon()">Submit</button>
             </form>
           </div>
         </div>
@@ -82,10 +93,16 @@
             'X-Parse-Application-Id': 'dime',
             'Content-Type': 'application/json',
           },
-  // body: JSON.stringify({
-  //   firstParam: 'yourValue',
-  //   secondParam: 'yourOtherValue',
-  // })
+        })
+      };
+
+      $scope.postToStoreAnon = function() {
+        fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/storeEmailName?incomeRange='+$scope.user.incomeRange+'&lastName='+$scope.user.lastName+'&email='+$scope.user.email, {
+          method: 'POST',
+          headers: {
+            'X-Parse-Application-Id': 'dime',
+            'Content-Type': 'application/json',
+          },
         })
       };
 
