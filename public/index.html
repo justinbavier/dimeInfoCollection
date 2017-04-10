@@ -109,9 +109,30 @@
               <input type="text" ng-model="user.charityOne"><br>
               <input type="text" ng-model="user.charityTwo"><br>
               <input type="text" ng-model="user.charityThree"><br>
-              How many times do you use your debit/credit card a day?<br>
+              How many times do you typically use your debit/credit card in a day?<br>
 
-              <input type="text" ng-model="user.numOfTrans"><br>
+
+              <p>
+                <input class="with-gap" name="numberOfTrans" ng-model="user.numOfTrans" value="0" type="radio" id="0" />
+                <label for="0">0</label>
+              </p>
+
+              <p>
+                <input class="with-gap" name="numberOfTrans" ng-model="user.numOfTrans" value="1-3" type="radio" id="1-3" />
+                <label for="1-3">1-3</label>
+              </p>
+
+              <p>
+                <input class="with-gap" name="numberOfTrans" ng-model="user.numOfTrans" value="4-6" type="radio" id="4-6" />
+                <label for="4-6">4-6</label>
+              </p>
+
+              <p>
+                <input class="with-gap" name="numberOfTrans" ng-model="user.numOfTrans" value="7+" type="radio" id="7+" />
+                <label for="7+">7+</label>
+              </p>
+
+              <!-- <input type="text" ng-model="user.numOfTrans"><br> -->
               What is your employment status?<br>
               <p>
                 <input class="with-gap" name="employment" ng-model="user.employmentStatus" value="Student" type="radio" id="student" />
