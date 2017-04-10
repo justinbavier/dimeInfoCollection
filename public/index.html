@@ -77,22 +77,7 @@
             <form novalidate>
               <!-- Age<br>
               <input type="text" ng-model="user.age"> -->
-              Gender<br>
-              <p>
-               <input class="with-gap" name="gender" ng-model="user.gender" value="male" type="radio" id="male" />
-               <label for="male">male</label>
-              </p>
-              <p>
-               <input class="with-gap" name="gender" ng-model="user.gender" value="female" type="radio" id="female" />
-               <label for="female">female</label>
-              </p>
-
-              <p>
-               <input class="with-gap" name="gender" ng-model="user.gender" value="other" type="radio" id="other" />
-               <label for="other">other</label> <input type="text" ng-model="user.gender">
-              </p>
-
-              <br>
+          
               What was your total income, before taxes, during the past year?<br>
               <p>
                <input class="with-gap" name="incomeRange" ng-model="user.incomeRange" value="Less than $25,000" type="radio" id="incomeBracket1" />
@@ -172,15 +157,15 @@
               <br />
               Would you use Dime?<br>
               <p>
-                <input class="with-gap" name="wouldYouUse" ng-model="user.wouldYouUseDime" value="Yes" type="radio" id="yesUse" />
+                <input class="with-gap" name="useDime" ng-model="user.useDime" value="Yes" type="radio" id="yesUse" />
                 <label for="yesUse">Yes</label>
               </p>
               <p>
-                <input class="with-gap" name="wouldYouUse" ng-model="user.wouldYouUseDime" value="Undecided" type="radio" id="undecidedUse" />
+                <input class="with-gap" name="useDime" ng-model="user.useDime" value="Undecided" type="radio" id="undecidedUse" />
                 <label for="undecidedUse">Undecided</label>
               </p>
               <p>
-                <input class="with-gap" name="wouldYouUse" ng-model="user.wouldYouUseDime" value="No" type="radio" id="noUse" />
+                <input class="with-gap" name="useDime" ng-model="user.useDime" value="No" type="radio" id="noUse" />
                 <label for="noUse">No</label>
               </p>
               <br>
@@ -221,7 +206,7 @@
       };
 
       $scope.postToStoreAnon = function() {
-        fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/anonInfo?incomeRange='+$scope.user.incomeRange+'&monthlyDonation='+$scope.user.monthlyDonation+'&doesDonate='+$scope.user.doesDonate+'&charityOne='+$scope.user.charityOne+'&charityTwo='+$scope.user.charityTwo+'&charityThree='+$scope.user.age+'&gender='$scope.user.gender+'&numOfTrans='+$scope.user.numOfTrans+'&employmentStatus='+$scope.user.employmentStatus+'&wouldYouUseDime='+$scope.user.wouwouldYouUseDime, {
+        fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/anonInfo?incomeRange='+$scope.user.incomeRange+'&monthlyDonation='+$scope.user.monthlyDonation+'&doesDonate='+$scope.user.doesDonate+'&charityOne='+$scope.user.charityOne+'&charityTwo='+$scope.user.charityTwo+'&charityThree='+$scope.user.age+'&numOfTrans='+$scope.user.numOfT+'&employmentStatus='+$scope.user.employment+'&wouldYouUseDime='$scope.user.useDime, {
           method: 'POST',
           headers: {
             'X-Parse-Application-Id': 'dime',
