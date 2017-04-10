@@ -71,7 +71,7 @@
         <div class="card">
           <div class="card-content">
             <p>
-              Another fun fact, all of the following questions are optional and will be stored anonymously. You don't have to worry about us judging you because you can't even name 3 charities ;)
+              Another fun fact, all of the following questions are optional and will be stored anonymously.
             </p>
             <br />
             <form novalidate>
@@ -93,7 +93,7 @@
                <label for="incomeBracket4">$100,000 or more</label>
               </p>
               <br />
-              How much do you think you could afford to donate each month?<br>
+              How much are you willing to donate each month?<br>
               <input type="text" ng-model="user.monthlyDonation">
               Do you currently make regular donations to any charitable organizations?<br>
               <p>
@@ -109,7 +109,7 @@
               <input type="text" ng-model="user.charityOne"><br>
               <input type="text" ng-model="user.charityTwo"><br>
               <input type="text" ng-model="user.charityThree"><br>
-              About how many times do you use your debit/credit card a day?<br>
+              How many times do you use your debit/credit card a day?<br>
 
               <input type="text" ng-model="user.numOfTrans"><br>
               What is your employment status?<br>
@@ -122,14 +122,18 @@
                 <label for="employed">Employed</label>
               </p>
               <p>
+                <input class="with-gap" name="employment" ng-model="user.employmentStatus" value="EmployedStudent" type="radio" id="employedstudent" />
+                <label for="employedstudent">Student and Employed</label>
+              </p>
+              <p>
                 <input class="with-gap" name="employment" ng-model="user.employmentStatus" value="Unemployed" type="radio" id="unemployed" />
                 <label for="unemployed">Unemployed</label>
               </p>
               <br />
-              Would You Use Dime?<br>
+              Would you use Dime?<br>
               <p>
                 <input class="with-gap" name="wouldYouUse" ng-model="user.wouldYouUseDime" value="Yes" type="radio" id="yesUse" />
-                <label for="yesUse">Of Course!</label>
+                <label for="yesUse">Yes</label>
               </p>
               <p>
                 <input class="with-gap" name="wouldYouUse" ng-model="user.wouldYouUseDime" value="Undecided" type="radio" id="undecidedUse" />
@@ -137,7 +141,7 @@
               </p>
               <p>
                 <input class="with-gap" name="wouldYouUse" ng-model="user.wouldYouUseDime" value="No" type="radio" id="noUse" />
-                <label for="noUse">No, I do not like to help those in need. Not one bit.</label>
+                <label for="noUse">No</label>
               </p>
               <br>
               <div class="col s4"></div>
