@@ -91,10 +91,23 @@
               <input type="text" ng-model="user.charityOne"><br>
               <input type="text" ng-model="user.charityTwo"><br>
               <input type="text" ng-model="user.charityThree"><br>
-              Number of Transactions:<br>
+              About how many times do you use your debit/credit card a day?<br>
+
               <input type="text" ng-model="user.numOfTrans"><br>
-              Employment Status:<br>
-              <input type="text" ng-model="user.employmentStatus"><br>
+              What is your employment status?<br>
+              <p>
+                <input class="with-gap" name="employment" ng-model="user.employmentStatus" value="Student" type="radio" id="student" />
+                <label for="student">Student</label>
+              </p>
+              <p>
+                <input class="with-gap" name="employment" ng-model="user.employmentStatus" value="Employed" type="radio" id="employed" />
+                <label for="employed">Employed</label>
+              </p>
+              <p>
+                <input class="with-gap" name="employment" ng-model="user.employmentStatus" value="Unemployed" type="radio" id="unemployed" />
+                <label for="unemployed">Unemployed</label>
+              </p>
+              <br />
               Would You Use Dime?<br>
               <p>
                 <input class="with-gap" name="wouldYouUse" ng-model="user.wouldYouUseDime" value="Yes" type="radio" id="yesUse" />
