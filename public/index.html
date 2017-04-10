@@ -113,23 +113,18 @@
               2. <input type="text" ng-model="user.charityTwo"><br>
               3. <input type="text" ng-model="user.charityThree"><br>
               How many times do you typically use your debit/credit card in a day?<br>
-
-
               <p>
                 <input class="with-gap" name="numberOfTrans" ng-model="user.numOfTrans" value="0" type="radio" id="0" />
                 <label for="0">0</label>
               </p>
-
               <p>
                 <input class="with-gap" name="numberOfTrans" ng-model="user.numOfTrans" value="1-3" type="radio" id="1-3" />
                 <label for="1-3">1-3</label>
               </p>
-
               <p>
                 <input class="with-gap" name="numberOfTrans" ng-model="user.numOfTrans" value="4-6" type="radio" id="4-6" />
                 <label for="4-6">4-6</label>
               </p>
-
               <p>
                 <input class="with-gap" name="numberOfTrans" ng-model="user.numOfTrans" value="7+" type="radio" id="7+" />
                 <label for="7+">7+</label>
@@ -202,7 +197,7 @@
       };
 
       $scope.postToStoreAnon = function() {
-        fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/anonInfo?incomeRange='+$scope.user.incomeRange+'&monthlyDonation='+$scope.user.monthlyDonation+'&doesDonate='+$scope.user.doesDonate+'&charityOne='+$scope.user.charityOne+'&charityTwo='+$scope.user.charityTwo+'&charityThree='+$scope.user.age+'&numOfTrans='+$scope.user.numOfT+'&employmentStatus='+$scope.user.employment+'&wouldYouUseDime='+$scope.user.useDime, {
+        fetch('https://sleepy-hamlet-74920.herokuapp.com/parse/functions/anonInfo?incomeRange='+$scope.user.incomeRange+'&monthlyDonation='+$scope.user.monthlyDonation+'&doesDonate='+$scope.user.doesDonate+'&charityOne='+$scope.user.charityOne+'&charityTwo='+$scope.user.charityTwo+'&charityThree='+$scope.user.charityThree+'&numOfTrans='+$scope.user.numOfTrans+'&employmentStatus='+$scope.user.employmentStatus+'&wouldYouUseDime='+$scope.user.useDime, {
           method: 'POST',
           headers: {
             'X-Parse-Application-Id': 'dime',
