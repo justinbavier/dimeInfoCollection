@@ -67,7 +67,7 @@ Parse.Cloud.define('anonInfo', function(req, res) {
   newAnonPerson.set("doesDonate", doesDonate);
   newAnonPerson.set("charityOne", charityOne);
   newAnonPerson.set("age", age);
-  newAnonPerson.set("gender",gender)
+  newAnonPerson.set("gender",gender);
   newAnonPerson.set("charityTwo", charityTwo);
   newAnonPerson.set("charityThree", charityThree);
   newAnonPerson.set("numOfTrans", numOfTrans);
