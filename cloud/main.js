@@ -43,13 +43,13 @@ Parse.Cloud.define('anonInfo', function(req, res) {
   const incomeRange = req.params.incomeRange;
   //how much they donate to charity
   const monthlyDonation = req.params.monthlyDonation;
-  const doesDonate = req.params.lastName.doesDonate;
+  const doesDonate = req.params.doesDonate;
   //name three charities
-  const charities = req.params.lastName.charities;
-  const numOfTrans = req.params.lastName.numOfTrans;
-  const employmentStatus = req.params.lastName.employmentStatus;
+  const charities = req.params.charities;
+  const numOfTrans = req.params.numOfTrans;
+  const employmentStatus = req.params.employmentStatus;
 
-  const wouldYouUseDime = req.params.lastName.wouldYouUseDime;
+  const wouldYouUseDime = req.params.wouldYouUseDime;
 
   var AnonPerson = Parse.Object.extend("Anonymous");
   var newAnonPerson = new AnonPerson();
