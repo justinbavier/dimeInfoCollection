@@ -95,7 +95,15 @@
               <input type="text" ng-model="user.numOfTrans"><br>
               Employment Status:<br>
               <input type="text" ng-model="user.employmentStatus"><br>
-              Would You Use Dime:<br>
+              Would You Use Dime?<br>
+              <p>
+                <input class="with-gap" name="wouldYouUse" ng-model="user.wouldYouUseDime" value="Yes" type="radio" id="yesUse" />
+                <label for="yesUse">Of Course!</label>
+              </p>
+              <p>
+                <input class="with-gap" name="wouldYouUse" ng-model="user.wouldYouUseDime" value="No" type="radio" id="noUse" />
+                <label for="noUse">No, I do not like to help those in need. Not one bit.</label>
+              </p>
               <input type="text" ng-model="user.wouldYouUseDime"><br>
               <br>
               <div class="col s4"></div>
